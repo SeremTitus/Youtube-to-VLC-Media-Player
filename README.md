@@ -5,23 +5,17 @@ Convert youtube playlist and whole youtube channels into a VLC playlist(.xspf)
 
 ## Requirments
 - Python (Open Source)
-    ```
-    https://www.python.org/
-    ```
+    - https://www.python.org/
 - Selenium module (Open Source)
-    Command Prompt(cmd)
+    - Command Prompt(cmd)
     ```
      pip install selenium
     ```
 - Chromedriver ( or any other browser driver)
-    ```
-    https://chromedriver.chromium.org/downloads
-    ```
+    - https://chromedriver.chromium.org/downloads   
 - VLC Media Player (Open Source)
-    ```
-    https://www.videolan.org/vlc/
-    ```
-
+    - https://www.videolan.org/vlc/
+    
 ## How to use
 1. Copy your url
 2. Run youtubeToXSPF
