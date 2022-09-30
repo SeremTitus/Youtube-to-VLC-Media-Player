@@ -1,4 +1,3 @@
-from ast import Pass
 import os
 import sys
 from selenium.webdriver.common.by import By
@@ -54,7 +53,6 @@ def xspfWriter(fileName,location = []):
 
    #print
    print('\nTotal Videos present:'+ str(numbTrack))
-
 
 
 #user_specific
