@@ -1,30 +1,25 @@
-import  time
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-def getingYtubevid(url):
-   options = Options()
-   options.add_experimental_option("excludeSwitches", ["enable-automation"])
-   options.add_experimental_option('useAutomationExtension', False)
-   driver = webdriver.Chrome(driverpath, options=options)
-   driver.get(url)
-   time.sleep(5)
-   height = driver.execute_script("return document.documentElement.scrollHeight")
-   lastheight = 0
-   while True:
-      if lastheight == height:
-         break
-      lastheight = height
-      driver.execute_script("window.scrollTo(0, " + str(height) + ");")
-      time.sleep(10)
-      height = driver.execute_script("return document.documentElement.scrollHeight")
+from ast import Pass
+import os
+import sys
+from selenium.webdriver.common.by import By
+from easySelenium import easySelenium
 
-   user_data = driver.find_elements_by_xpath('//*[@id="video-title"]')
-   f =[]
-   for i in user_data:
-      link = (i.get_attribute('href'))
-      f.append(str(link))
-   driver.quit()
-   return f
+def getingYtubevid(url):
+   chrome= easySelenium(True)
+   chrome.open(url)
+   chrome.scroll()
+   youtubeHyperlinks:list=[]
+   i:int = 1
+   while True:
+      pass
+      try:
+         link = str(chrome.browser.find_element(By.XPATH,'//*[@id="items"]/ytd-grid-video-renderer['+str(i)+']//*[@id="video-title"]').get_attribute('href'))
+         youtubeHyperlinks.append(link)
+         i += 1
+      except:
+         break
+   chrome.free()
+   return youtubeHyperlinks
 def xspfWriter(fileName,location = []):
    #annotation = title
    #var
@@ -32,7 +27,7 @@ def xspfWriter(fileName,location = []):
    path =fileName + '.xspf'
    docIntro = '<?xml version="1.0" encoding="UTF-8"?>\n<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">\n	<title>Playlist</title>\n	<trackList>\n'
    #create file
-   file = open(path,'w')
+   file = open(os.path.join(sys.path[0], path),'w')
    file.write(docIntro)
    file.close()   
    #create tracks
@@ -47,12 +42,12 @@ def xspfWriter(fileName,location = []):
 
       #write
       trackConstruct ='		<track>\n			<location>'+ location[count] + '</location>\n			<extension application="http://www.videolan.org/vlc/playlist/0">\n				<vlc:id>'+ str(count) +'</vlc:id>\n			</extension>\n		</track>\n'
-      file = open(path,'a')
+      file = open(os.path.join(sys.path[0], path),'a')
       file.write(trackConstruct)
       file.close()
       count += 1   
    playlistClose = '	</trackList>\n</playlist>\n'
-   file = open(path,'a')
+   file = open(os.path.join(sys.path[0], path),'a')
    file.write(playlistClose)
    file.close()
 
