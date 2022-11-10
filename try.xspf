@@ -2,41 +2,5 @@
 <playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
 	<title>Playlist</title>
 	<trackList>
-		<track>
-			<location>https://www.youtube.com/watch?v=tCckvy6Wwdo</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>0</vlc:id>
-			</extension>
-		</track>
-		<track>
-			<location>https://www.youtube.com/watch?v=-dP4u51bzfs</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>1</vlc:id>
-			</extension>
-		</track>
-		<track>
-			<location>https://www.youtube.com/watch?v=9pbOM7f8fZE</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>2</vlc:id>
-			</extension>
-		</track>
-		<track>
-			<location>https://www.youtube.com/watch?v=w-ECO3Ccpc8</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>3</vlc:id>
-			</extension>
-		</track>
-		<track>
-			<location>https://www.youtube.com/watch?v=2hXZdx_cf8Q</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>4</vlc:id>
-			</extension>
-		</track>
-		<track>
-			<location>https://www.youtube.com/watch?v=8AYWAQyG1AI</location>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
-				<vlc:id>5</vlc:id>
-			</extension>
-		</track>
 	</trackList>
 </playlist>

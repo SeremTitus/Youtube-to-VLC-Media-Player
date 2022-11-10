@@ -7,7 +7,7 @@ def getingYtubevid(url):
    chrome= easySelenium(True)
    chrome.open(url)
    chrome.scroll()
-   youtubeHyperlinks:list=[]
+   youtubeHyperlinks=[]
    i:int = 1
    while True:
       pass
